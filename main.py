@@ -25,3 +25,5 @@ game = Game()
 game.start_game()
 
 pygame.quit()
+
+#русик ишак
