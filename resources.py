@@ -37,12 +37,8 @@ class ResourceMap(Mapping[str, Surface]):
         #         )
         for path in get_paths(list(self.assets_path.iterdir())):
             image = pygame.image.load(path.absolute())
+            image = image.convert_alpha()
 
-            if image.get_alpha():
-                image = image.convert_alpha()
-            else:
-                image = image.convert()
-                image.set_colorkey((255, 0, 255))
             self._images[path.stem] = image
         print(self._images)
 
