@@ -11,7 +11,6 @@ from PIL.Image import Image
 
 class ResourceMap(Mapping[str, Surface]):
     def __init__(self):
-        # self.assets_path = pathlib.Path(os.path.join(ASSETS_PATH, "psd"))
         self.assets_path = pathlib.Path(os.path.join(ASSETS_PATH, "images"))
         self._images = dict()
 
@@ -27,20 +26,11 @@ class ResourceMap(Mapping[str, Surface]):
         return len(self._images)
 
     def initialize(self):
-        # psd_images = [PSDImage.open(path) for path in self.assets_path.iterdir()]
-
-        # layer: Group | PixelLayer
-        # for image in psd_images:
-        #     for layer in image:
-        #         self._images[layer.name] = to_surface(
-        #             layer.composite()
-        #         )
         for path in get_paths(list(self.assets_path.iterdir())):
             image = pygame.image.load(path.absolute())
             image = image.convert_alpha()
 
             self._images[path.stem] = image
-        print(self._images)
 
 
 def get_paths(paths: list[pathlib.Path]) -> list[pathlib.Path]:
