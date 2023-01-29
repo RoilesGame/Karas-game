@@ -26,4 +26,3 @@ class Timer:
             if self.ticks != -1 and self.tick_count >= self.ticks:
                 self.done = True
             return True
-        return False
