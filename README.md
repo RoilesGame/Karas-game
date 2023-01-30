@@ -1,2 +1,18 @@
-# Karas-game
-Doing game about karas, I and David will write string "import pygame", Egor will write all game-code.)))
+# Проект Karas-game
+Делали: Егор, Давид, Руслан
+
+## Requirements
+
+* Python 3.9.7+
+
+## Installation
+
+```console
+$ pip install -r requirements.txt
+```
+
+## Start
+
+```console
+$ python main.py
+```
