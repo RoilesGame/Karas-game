@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import pygame
 from pygame.rect import Rect
 from pygame.sprite import LayeredUpdates
@@ -39,7 +41,7 @@ class Game(State):
 
     def startup(self, now, persistant):
         mixer.init()
-        pygame.mixer.music.load("./assets/music/ambient.ogg")
+        pygame.mixer.music.load(Path("./assets/music/ambient.ogg").absolute())
         pygame.mixer.music.play(-1, 0.0)
 
     def get_event(self, event):

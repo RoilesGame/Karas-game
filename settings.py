@@ -1,12 +1,13 @@
 from os import path
 
 import pygame
+from pathlib import Path
 
 CAPTION = "The Fishing"
 SCREEN_SIZE = (800, 550)
 BACKGROUND_COLOR = (30, 40, 50)
 WATER_COLOR = (86, 88, 123)
-ASSETS_PATH = ".\\assets"
+ASSETS_PATH = Path(".\\assets").absolute()
 
 FONT_PATH = path.join(ASSETS_PATH, "fonts\\Fixedsys500c.ttf")
 
